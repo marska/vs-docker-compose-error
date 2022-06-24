@@ -1,0 +1,17 @@
+version: '3.4'
+
+services:
+  consoleapp00:
+    image: ${DOCKER_REGISTRY-}consoleapp00
+    build:
+      context: .
+      dockerfile: ConsoleApp00/Dockerfile
+
+  webapp01:
+    image: ${DOCKER_REGISTRY-}webapp01
+    build:
+      context: .
+      dockerfile: WebApp01/Dockerfile
+    depends_on:
+      consoleapp00:
+        condition: service_completed_successfully

@@ -1,0 +1,5 @@
+version: '3.4'
+
+services:
+  consoleapp00:
+    entrypoint: ["dotnet", "/app/bin/Debug/net6.0/ConsoleApp00.dll"]
